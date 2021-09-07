@@ -4,8 +4,7 @@
 // C++ Weekly - Ep 133 - What Exactly IS A Lambda Anyhow?
 // implement lambda
 
-#include<cstdio>
-#include<iostream>
+#include <iostream>
 
 // implement lambda
 struct my_lambda {
