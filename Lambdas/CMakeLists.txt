@@ -1,7 +1,11 @@
-cmake_minimum_required(VERSION 3.10)
-project(Lambdas)
+if (APPLE)
+    cmake_minimum_required(VERSION 3.20)
+    set(CMAKE_CXX_STANDARD 20)
+elseif (LINUX)
+    cmake_minimum_required(VERSION 3.10)
+endif ()
 
-set(CMAKE_CXX_STANDARD 17)
+project(Lambdas)
 
 add_executable(Lambdas main.cpp)
 add_executable(for_each_loop for_each_loop.cpp)

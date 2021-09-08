@@ -17,8 +17,8 @@
 */
 
 
-#include<iostream>
-#include<algorithm>
+#include <iostream>
+#include <algorithm>
 
 // helper function
 void print_array(int a)
