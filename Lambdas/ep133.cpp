@@ -6,6 +6,7 @@
 
 #include<cstdio>
 #include<iostream>
+#include<utility>
 
 // implement lambda
 struct my_lambda {
