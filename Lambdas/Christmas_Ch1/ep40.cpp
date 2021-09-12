@@ -20,7 +20,7 @@ class my_L1
 public:
     my_L1() : val(5) {}
     int val;
-    int operator() (){
+    int operator() () const{
         return val;
     }
 };
@@ -45,10 +45,11 @@ public:
 
 int main()
 {
-//    auto l1 = []() { return 5;};
-//    auto l2 = [](int a) { return a * a;};
+    auto s1 = []() { return 5;};
+    auto s2 = [](int a) { return a * a;};
 
-//    auto combine = S(l1, l2);
+    auto s = S(s1, s2);
+    std::cout << s() << " " << s(10) << std::endl;
 
     my_L1 l1;
     my_L2 l2(10);

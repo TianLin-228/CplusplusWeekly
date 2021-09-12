@@ -10,4 +10,7 @@ project(Lambdas)
 add_executable(Lambdas main.cpp)
 add_executable(for_each_loop for_each_loop.cpp)
 add_executable(lambda lambda.cpp)
+add_executable(variadic_function variadic_function.cpp)
+
 add_subdirectory(Christmas_Ch1)
+add_subdirectory(Christmas_Ch2)
