@@ -20,8 +20,16 @@ void print(A a, B... b)
     print(b...);
 }
 
+template<typename ...S>
+auto sum(S... s)
+{
+    return ([s](){cout << s << " "; return s;}() + ...);
+//    return (s + ...);
+}
+
 int main()
 {
     print(1,2,3,4,"a","b","cd");
+    cout << sum(1,2,3,4,5,6) << "\n";
     return 0;
 }
