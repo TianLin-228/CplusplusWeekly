@@ -2,6 +2,7 @@
 // Created by Cu Cui on 2021/9/15.
 //
 // C++ Weekly - Ep 93 - Custom Comparators for Containers
+// C++ Weekly - Ep 94 - Lambdas as Comparators
 // std::set
 // C++ Containers library std::set
 //  Defined in header <set>
@@ -57,6 +58,17 @@ int main()
 
     for (auto &n : new_set)
         std::cout << n.val << " ";
+
+    std::set new_data{{NewData{"lin"}},
+                     [](const NewData &lhs, const NewData &rhs) {
+                        return lhs.val < rhs.val;
+                     }};
+
+    new_data.insert(n2);
+
+    for (auto &n : new_data)
+        std::cout << n.val << " ";
+
 
     return 0;
 }
