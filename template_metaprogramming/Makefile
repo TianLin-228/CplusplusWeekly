@@ -7,7 +7,7 @@ CCTBB = g++
 DPCPP = dpcpp
 
 # compilation flags
-CCFLAGS = -std=c++17 -O0
+CCFLAGS = -std=c++17 -O3
 
 # linker flags
 LFLAGS = -L/export/home/cucui/Documents/UniHeidelberg/benchmark/build/src -lbenchmark -lpthread
