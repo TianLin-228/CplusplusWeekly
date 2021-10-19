@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <array>
+#include <algorithm>
 
 template <typename ...T>
 struct Op : T...
