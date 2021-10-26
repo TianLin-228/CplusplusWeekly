@@ -10,8 +10,11 @@ find_package(benchmark REQUIRED
 	HINTS /export/home/cucui/Documents/UniHeidelberg/benchmark/build/src)
 
 add_compile_options(
-        -std=c++2a -O0
+        -std=c++2a -O3
 )
 
 add_executable(cppcon2014_p1 cppcon2014_p1.cpp OOP.cc)
 target_link_libraries(cppcon2014_p1 benchmark::benchmark)
+
+add_executable(jacobi jacobi.cpp)
+add_executable(KL_2017 KL_2017.cc)
