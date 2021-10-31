@@ -1,44 +1,14 @@
 #include <iostream>
 #include <mpi.h>
-#include <unistd.h>
-#include <string>
+
+#include "tools.h"
 #include "time_experiment.hh"
 
-typedef struct Cell
-{
-    Cell(int i, bool b, double x_[], double y_[]) {
-        index = i;
-        flag = b;
-        for (int j=0; j<4; ++j) {
-            x[j] = x_[j];
-            y[j] = y_[j];
-        }
-    }
-    Cell() = default;;
-    int index{};
-    bool flag{};
-    double x[4]{};
-    double y[4]{};
 
-} cell_t;
-
-void print_cell(cell_t &cell);
-
-template <typename T, typename U>
-void do_something(T data, U val);
-
-template <>
-void do_something(int* data, int val)
-{
-    std::cout << "Rank [" << val << "] is doing sth. ...\n";
-    sleep(1);
-}
-
-template <>
 void do_something(cell_t &data, double & val)
 {
     print_cell(data);
-    sleep(1);
+    val = sum(data.x, 4);
 }
 
 
@@ -63,17 +33,6 @@ void creat_cell_datatype(MPI_Datatype &new_type)
     MPI_Type_commit(&new_type);
 }
 
-auto sum = [](auto x[], size_t s) {
-    double sum = 0;
-    for (int i=0; i<s; ++i) sum += x[i];
-    return sum;
-};
-
-void print_cell(cell_t &cell)
-{
-    printf("Index: %d, flag: %d, sum x[]= %4.1f, sum y[]= %4.1f\n",
-           cell.index, cell.flag, sum(cell.x, 4), sum(cell.y, 4));
-}
 
 int main(int argc, char **argv)
 {
@@ -128,7 +87,6 @@ int main(int argc, char **argv)
         }
 
     }
-    print_cell(cell);
 
     /*  Isend Irecv  */
 //    MPI_Isend()
