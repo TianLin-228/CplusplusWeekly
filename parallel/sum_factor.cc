@@ -15,7 +15,7 @@
 #endif
 #include "tools.h"
 
-const int N = 3;
+const int N = 7;
 
 template <typename T>
 void initA(T &A, T &a1, T &a2)

@@ -4,6 +4,8 @@ enable_language(CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+add_compile_options( -O3 )
+
 find_package(OpenMP)
 
 find_package(MPI REQUIRED)
