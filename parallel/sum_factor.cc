@@ -7,7 +7,12 @@
  */
 
 #include <iostream>
+#include <memory>
+#ifdef __linux__
+#include "/export/home/cucui/Documents/UniHeidelberg/benchmark/include/benchmark/benchmark.h"
+#else
 #include <benchmark/benchmark.h>
+#endif
 #include "tools.h"
 
 const int N = 3;
